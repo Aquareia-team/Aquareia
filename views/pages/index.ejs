@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquareia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* CSS para a animação de saída da página */
+        body.page-transitioning {
+            overflow: hidden; /* Evita barras de rolagem estranhas durante a transição */
+        }
+
+        /* Animação que faz a página atual "diminuir e desaparecer" */
+        .page-out-animation {
+            animation: fadeOutAndShrink 0.4s ease-in-out forwards;
+        }
+
+        @keyframes fadeOutAndShrink {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.95); } /* Diminui ligeirin some */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="/public/imagens/transferir (3).jpeg" alt="Logo Aquareia">
+            <span>AQUAREIA</span>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <p class="welcome-text">SEJA BEM-VINDO AO</p>
+            <h1>AQUAREIA</h1>
+            <p class="description">Explore um mundo subaquático fascinante!</p>
+            <a href="/home" class="cta-button" id="nextPageButton">BORA MERGULHAR?</a>
+        </div>
+    </main>
+
+    <script>
+        const nextPageButton = document.getElementById('nextPageButton');
+        const body = document.body;
+
+        if (nextPageButton) {
+            nextPageButton.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede a navegação padrão imediata
+                const targetUrl = this.href; // Pega a URL de destino do link
+
+                body.classList.add('page-transitioning'); // Adiciona classe para overflow hidden
+                // Adiciona a classe de animação ao elemento principal que você quer animar (ex: body ou main)
+                document.querySelector('.hero').classList.add('page-out-animation'); 
+
+                // Espera a animação terminar antes de navegar
+                setTimeout(() => {
+                    window.location.href = targetUrl; // Redireciona
+                }, 400); // Deve ser igual ou ligeiramente maior que a duração da animação (0.4s = 400ms)
+            });
+        }
+    </script>
+</body>
+</html>
+</html>

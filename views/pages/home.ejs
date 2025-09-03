@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquareia - Detalhes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/stylehome.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <section class="logo">
+            <img src="https://via.placeholder.com/50x50?text=LOGO" alt="Logo Aquareia">
+            <span>AQUAREIA</span>
+        </section>
+        <nav class="header-icons">
+            <span class="nav-icon">&#9776;</span>
+            <img src="https://via.placeholder.com/24x24?text=🛒" alt="Carrinho" class="cart-icon">
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="banner-section">
+            <img src="imagens/lotes.png" alt="Banner Mermaid School">
+        </section>
+
+        <section class="about-section">
+            <img src="https://via.placeholder.com/500x300?text=Foto+Aquario" alt="Foto do Aquário" class="about-image">
+            <h2>CONHEÇA O AQUAREIA</h2>
+            <p>Somos mais do que um parque aquático tropical. Somos um centro de conservação da vida marinha, lar de diversas espécies de peixes, tubarões, raias e muito mais. Nossa missão é educar e inspirar os visitantes a cuidar dos oceanos e seus habitantes. Venha mergulhar conosco nesta experiência inesquecível!</p>
+            <a href="/saiba-mais" class="read-more-button" id="saibaMaisLink">SAIBA MAIS</a>
+        </section>
+
+        <section class="hashtags-section">
+            <h2>USE NOSSAS HASHTAGS</h2>
+            <p class="hashtags-list">
+                #AQUAREIABRASIL #VIDASUBACUATICA <br>
+                #MERGULHENESSA #CONSERVACAO <br>
+                #EXPLOREAQUAREIA #CONHECIMENTOMARINHO
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <section class="footer-contact">
+            <p>CONTATO:</p>
+            <address>
+                <p>Avenida dos Oceanos, 123 - Cidade Marítima, SP</p>
+                <p>+55 11 98765-4321</p>
+                <p>contato@aquareia.com.br</p>
+            </address>
+        </section>
+        <section class="footer-social">
+            <p>SIGA NOSSAS REDES:</p>
+            <ul class="social-icons">
+                <li><a href="#"><img src="https://via.placeholder.com/24x24?text=FB" alt="Facebook"></a></li>
+                <li><a href="#"><img src="https://via.placeholder.com/24x24?text=IG" alt="Instagram"></a></li>
+                <li><a href="#"><img src="https://via.placeholder.com/24x24?text=YT" alt="YouTube"></a></li>
+            </ul>
+        </section>
+        <section class="footer-copyright">
+            <p>&copy; 2025 Aquareia. Todos os direitos reservados.</p>
+        </section>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('page-loaded');
+        });
+
+        const saibaMaisLink = document.getElementById('saibaMaisLink');
+        const body = document.body;
+
+        if (saibaMaisLink) {
+            saibaMaisLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetUrl = this.href;
+
+                body.classList.add('page-transitioning');
+                body.classList.add('page-out-animation');
+
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 400);
+            });
+        }
+    </script>
+</body>
+</html>
